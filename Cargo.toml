@@ -1,0 +1,12 @@
+[package]
+name = "date"
+version = "0.1.0"
+authors = ["Paul Boelens <info@paulboelens.com"]
+description = "Get the current date every second"
+documentation = "Run ./date"
+license = "MIT"
+homepage = ""
+repository = ""
+
+[dependencies]
+chrono = "0.4.5"
