@@ -1,6 +1,6 @@
 [package]
-name = "date"
-version = "0.1.0"
+name = "xclock"
+version = "0.2.0"
 authors = ["Paul Boelens <info@paulboelens.com"]
 description = "Get the current date every second"
 documentation = "Run ./date"
@@ -10,3 +10,4 @@ repository = ""
 
 [dependencies]
 chrono = "0.4.5"
+clap = "~2.32"
