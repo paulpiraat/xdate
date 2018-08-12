@@ -11,3 +11,4 @@ repository = ""
 [dependencies]
 chrono = "0.4.5"
 clap = "~2.32"
+xcb = "0.8.2"
