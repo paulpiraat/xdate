@@ -1,5 +1,6 @@
-extern crate chrono;
+#[macro_use]
 extern crate clap;
+extern crate chrono;
 extern crate xcb;
 
 use chrono::prelude::*;
@@ -7,13 +8,19 @@ use clap::{App, Arg};
 use std::{thread, time};
 
 fn main() {
-
     if !is_connected() {
         println!("Could not connect to X!");
         return;
     }
 
     let matches = App::new("xClock")
+        .arg(
+            Arg::with_name("delay")
+                .short("d")
+                .long("delay")
+                .help("Delay in between each loop")
+                .takes_value(true),
+        )
         .arg(
             Arg::with_name("format")
                 .short("f")
@@ -31,10 +38,11 @@ fn main() {
         .get_matches();
 
     let format = matches.value_of("format").unwrap_or("");
+    let delay = value_t!(matches, "delay", u64).unwrap_or(1000);
     let snoop = matches.occurrences_of("snoop");
 
     if snoop == 1 {
-        let wait_time = time::Duration::from_millis(1000);
+        let wait_time = time::Duration::from_millis(delay);
 
         loop {
             if !is_connected() {
