@@ -2,8 +2,8 @@
 name = "xclock"
 version = "0.2.0"
 authors = ["Paul Boelens <info@paulboelens.com"]
-description = "Get the current date every second"
-documentation = "Run ./date"
+description = "Get the current datetime"
+documentation = "Run ./xclock"
 license = "MIT"
 homepage = ""
 repository = ""
